@@ -23,9 +23,9 @@ Raspberry pi 3B uit 2018 met o.a. snellere 1,4 GHz processor, gigiabit ethernet 
 
 ![raspberry pi 3B uit 2018](./assets/clip_image004.gif)
 
-Raspberry pi 4 uit 2019 met o.a. snellere 1,5 GHz processor, USB 3.0. De Raspberry pi 4 is eveneens te krijgen in versies met 2, 4 of 8 GB RAM-geheugen.
+Raspberry pi 4B uit 2019 met o.a. snellere 1,5 GHz processor, USB 3.0. De Raspberry pi 4B is beschikbaar in versies met 2, 4 of 8 GB RAM-geheugen.
 
-![raspberry pi 4 uit 2019](./assets/clip_image005.jpg)
+![raspberry pi 4B uit 2019](./assets/clip_image005.jpg)
 
 De recentste versies van de raspberry pi beschikken onder andere over:
 
@@ -36,7 +36,7 @@ De recentste versies van de raspberry pi beschikken onder andere over:
 * Bluetooth
 *  ….
 
- 
+In deze cursus wordt gebruik gemaakt van de Raspberry pi 4B.
 
 ## Raspberry pi besturingssystemen
  
@@ -46,7 +46,7 @@ Andere besturingssystemen zijn onder andere Ubuntu Mate, Windows 10 IOT core, Ri
 ## Aanmaken bootable SD-kaart en opstarten Raspberry Pi
 
 Er moet een bootable micro SD-kaart aangemaakt worden waar het besturingssysteem op staat. Download hiervoor volgende software en installeer deze.
-https://www.raspberrypi.org/software/
+[https://www.raspberrypi.org/software/](https://www.raspberrypi.org/software/)
 
 Start de software 
 
@@ -96,9 +96,40 @@ De GPIO pinnen van de raspberry pi
 
 ![img](./assets/clip_image021.jpg)
 
-## gpiozero library
+## Python 3
 
-Zorg dat je gebruik maakt van python 3. Dit kan je controleren aan de hand van volgende uitleg. https://learn.sparkfun.com/tutorials/python-programming-tutorial-getting-started-with-the-raspberry-pi/configure-your-pi
+Zorg dat je gebruik maakt van python 3. Dit kan je controleren via volgende commando in een terminal venster.
+
+```cpp
+python --version
+```
+![img](./assets/cmdPythonVersion.png)
+
+Indien je niet over versie 3 beschikt is een update mogelijk door de instellingen aan te passen in het bashrc bestand. In het voorbeeld wordt gebruik gemaakt van de editor nano.
+
+```cpp
+nano ~/.bashrc
+```
+![img](./assets/cmdNano.png)
+
+Voeg onderaan in het bashrc bestand volgende regels code toe zodat python 3 gebruikt wordt en pip3.
+
+```cpp
+alias python='/usr/bin/python3'
+alias pip=pip3
+```
+![img](./assets/cmdPython3.png)
+
+Bewaar de aanpassingen met de toetsencombinatie Ctrl + O
+Sluit nano met de toestencombinatie Ctrl + X
+
+Controller terug de python versie met volgende commando in het terminal venster:
+
+```cpp
+python --version
+```
+
+## gpiozero library
 
 Installeer indien nodig de bibliotheek gpiozero door in een terminal venster volgend instructie in te geven:
 
@@ -107,6 +138,14 @@ sudo apt install python3-gpiozero
 ```
  
 ![img](./assets/clip_image023.jpg)
+
+## Code editor
+
+Een goede beginners editor voor python op raspberry pi in Thonny Python IDE.
+
+![img](./assets/Thonny.png)
+
+
 
 ## led oplichten
 
@@ -118,7 +157,7 @@ import gpiozero as io
 led = io.LED(18)
 led.on()
 ```
-
+![img](./assets/Thonny1.png)
 In het voorbeeld maken we gebruik van de bibliotheek gpiozero. De functie LED zit in deze bibliotheek.
 Op de 2de regel wordt het object led aangemaakt en wordt de pin 18 toegewezen.
 Op de 3de regel wordt met de methode on() de led ingeschakeld. 
@@ -201,7 +240,7 @@ sudo pip3 install Adafruit_python_DHT
 ```
 ![img](./assets/clip_image029.jpg)
 
-Voorzie een pull-up weerstand
+Bij sommige borden is het nodig om een pull-up weerstand te voorzien.
 
 ![img](./assets/clip_image031.jpg)
 
@@ -215,6 +254,20 @@ vocht,temp = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11,2)
 print("Relatieve vochtigheid in %",vocht)
 print("Temperatuur in graden Celsius",temp)
 ```
- 
+
+## Componentenlijst
+
+Alle componenten zij normaal eenvoudig te verkrijgen bij verschillende leveranciers. In onderstaande lijst worden de link naar opencircuit.nl en bol.com opgenomen.
+
+| Aantal | Omschrijving en link |
+| ------------- |-------------|
+| 1 | [Raspberry pi 4 2GB](https://opencircuit.nl/Product/Raspberry-Pi-4-Model-B-2GB) |
+| 1 | [Micro SD card 16 GB via Bol.com](https://www.bol.com/nl/p/sandisk-ultra-micro-sdhc-16gb-met-adapter/9200000047488161/?bltg=itm_event%3Dclick%26mmt_id%3DXpypfxzFJtmxY97Bt%40ASJgAAAkU%26slt_type%3Drecommendations%26pg_nm%3Dpdp%26slt_id%3Dprd_reco%26slt_nm%3Dproduct_recommendations%26slt_pos%3DC1%26slt_owner%3Dccs%26itm_type%3Dproduct%26itm_lp%3D7%26itm_id%3D9200000047488161&bltgh=pzBqWqrgRYsqySSU7HlKMw.1_7_8.15.ProductTitle) | 
+| 1 | [Voeding voor Raspberry pi 4](https://opencircuit.nl/Product/Raspberry-Pi-4-voeding-USB-C.-5.1V.-3A-EU-Plug) |
+| 1 | [Micro HDMI kabel](https://opencircuit.nl/Product/Offici%C3%ABle-Micro-HDMI-naar-HDMI-kabel-1-m) |
+| 1 | [Breadboard](https://opencircuit.nl/Product/Breadboard-wit-400-punten) |
+| 1 | [DHT11 tempeatuur- en luchtvochtigheidssensor](https://opencircuit.nl/Product/DHT11-Luchtvochtigheid-temperatuur-sensor) |
+
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/519b698d-5018-45eb-80d8-b740d63705a4/deploy-status)](https://app.netlify.com/sites/innovet-raspberrypigpio/deploys)
  
