@@ -233,16 +233,20 @@ Oefeningen:
 
 De DHT11 is een temperatuur- en luchtvochtigheidssensor. 
 
+![img](./assets/DHT11.png)
+
+De DHT11 is zowel in 3 pins aansluiting als 4 pins aansluiting beschikbaar. Daarnaast beschillen sommige bordjes al over een interne pull-up weerstand.
+
+Doordat de uitgang van de DHT een opendrain of opencollector uitgang bezit is een pull-up weerstand nodig. Indien de pull-up weerstand niet aanwezig is zou een zwevend signaal ontstaan wanneer de transistor niet in geleiding is.
+
+![img](./assets/DHT11Pullup.png)
+
 Installeer de bijhorende bibliotheek in cd command line.
  
 ```
 sudo pip3 install Adafruit_python_DHT
 ```
 ![img](./assets/clip_image029.jpg)
-
-Bij sommige borden is het nodig om een pull-up weerstand te voorzien.
-
-![img](./assets/clip_image031.jpg)
 
 Voorbeeldcode:
 
