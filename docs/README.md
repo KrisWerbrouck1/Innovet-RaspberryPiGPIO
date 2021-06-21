@@ -75,7 +75,33 @@ Vervolgens moet het land, de taal en de tijdszone ingesteld worden.
 De standaard gebruiker is pi en het paswoord raspberry. Het is echter aan te raden dit paswoord aan te passen.
 Eveneens kan er een verbinding gemaakt worden met het wifi netwerk.
 Als laatste stap wordt gevraagd om de software te updaten. Dit zal even duren. Neem gerust terug een kop koffie.
+## Raspberry pi vanop afstand bedienen
 
+Om de raspberry pi vanop afstand via de grafische interface te bedienen kan gebruikt gemaakt worden van VNC. VNC moet gedownload worden op de computer die gebruikt wordt voor de externe toegang. [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)
+
+Op de raspberry pi moet de toegang via VNC ingesteld worden. 
+
+![configuratie](./assets/configuratie.png)
+
+Schakel vervolgens VNC in.
+
+![VNC](./assets/VNC.png)
+
+Start de Raspberry Pi opnieuw op en zoek het IP-adres op via LXTernminal.
+
+![LxTerminal](./assets/LXTerminal.png)
+
+Type de instructie ifconfig in de LXTerminal
+
+![Ifconfig](./assets/ifconfig.png)
+
+Het IP-adres wordt weergegeven. Noteer of onthoud het IP-adres van de raspberry pi.
+
+Geef het IP-adres in VNC-Viewer.
+
+![Ifconfig](./assets/VNCViewer.png)
+
+De Raspberry Pi kan nu vanop afstand bediend worden.
 ## GPIO Zero
 
 GPIO Zero is een Python-bibliotheek die het relatief eenvoudig maakt sensoren en actuatoren aan te sluiten op de raspberry pi via de GPIO pinnen.
