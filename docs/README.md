@@ -278,19 +278,20 @@ Doordat de uitgang van de DHT een opendrain of opencollector uitgang bezit is ee
 Installeer de bijhorende bibliotheek in cd command line.
  
 ```
-sudo pip3 install Adafruit_python_DHT
+sudo pip3 install adafruit-circuitpython-dht
 ```
-![img](./assets/clip_image029.jpg)
-
 Voorbeeldcode:
 
  
 ```py
-import Adafruit_DHT
+import board
+import adafruit_dht
+ 
+dhtDevice = adafruit_dht.DHT11(board.D14, use_pulseio=False)
 
-vocht,temp = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11,2)
-print("Relatieve vochtigheid in %",vocht)
-print("Temperatuur in graden Celsius",temp)
+temperature_c = dhtDevice.temperature
+humidity = dhtDevice.humidity
+print("Temp: {:.1f} °C Humidity: {}% ".format(temperature_c, humidity))
 ```
 
 ## Componentenlijst
