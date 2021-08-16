@@ -146,8 +146,14 @@ alias pip=pip3
 ```
 ![img](./assets/cmdPython3.png)
 
-Bewaar de aanpassingen met de toetsencombinatie Ctrl + O
-Sluit nano met de toestencombinatie Ctrl + X
+Bewaar de aanpassingen met de toetsencombinatie Ctrl + O.
+Sluit nano met de toestencombinatie Ctrl + X.
+
+Voer de volgende instructie uit:
+
+```cpp
+source ~/.bashrc
+```
 
 Controller terug de python versie met volgende commando in het terminal venster:
 
