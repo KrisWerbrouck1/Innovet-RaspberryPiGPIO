@@ -101,7 +101,9 @@ Geef het IP-adres in VNC-Viewer.
 
 ![Ifconfig](./assets/VNCViewer.png)
 
-De Raspberry Pi kan nu vanop afstand bediend worden.
+De Raspberry Pi kan nu vanop afstand bediend worden. 
+Indien je een zwart scherm krijgt in VNC-Viewer moet je de resolutie van de raspberry pi aanpassen.
+
 ## GPIO Zero
 
 GPIO Zero is een Python-bibliotheek die het relatief eenvoudig maakt sensoren en actuatoren aan te sluiten op de raspberry pi via de GPIO pinnen.
