@@ -278,21 +278,27 @@ Doordat de uitgang van de DHT een opendrain of opencollector uitgang bezit is ee
 Installeer de bijhorende bibliotheek in cd command line.
  
 ```
-sudo pip3 install adafruit-circuitpython-dht
+sudo pip3 install Adafruit_DHT
 ```
 Voorbeeldcode:
 
  
 ```py
-import board
-import adafruit_dht
- 
-dhtDevice = adafruit_dht.DHT11(board.D14, use_pulseio=False)
+iimport Adafruit_DHT
+import time
 
-temperature_c = dhtDevice.temperature
-humidity = dhtDevice.humidity
-print("Temp: {:.1f} °C Humidity: {}% ".format(temperature_c, humidity))
+sensor = Adafruit_DHT.DHT11
+pin =14
+while True:
+    humidity,temperature = Adafruit_DHT.read_retry(sensor,pin)
+    print("Temp: " + str(temperature) + "°C")
+    print("Tumidity: " + str(humidity) + "%")
+    time.sleep(30)
+
 ```
+
+Soms zijn er problemen met de Adafruit_DHT lib en de Raspberry pi 4. Dit kan opgelost worden via onderstaande link.
+[Adafruit DHT Raspberry pi 4](https://www.iotstarters.com/connecting-dht11-sensor-with-raspberry-pi-3-4-using-python/#Connecting_DHT11_Sensor_with_Raspberry_Pi_4_3_using_Python)
 
 ## Componentenlijst
 
