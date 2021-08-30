@@ -284,7 +284,7 @@ Voorbeeldcode:
 
  
 ```py
-iimport Adafruit_DHT
+import Adafruit_DHT
 import time
 
 sensor = Adafruit_DHT.DHT11
